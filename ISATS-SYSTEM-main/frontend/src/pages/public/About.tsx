@@ -1,0 +1,73 @@
+import { Link } from 'react-router-dom'
+import { Shield, CheckCircle2, Server, Cpu, QrCode, Users, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
+import { PublicLayout } from '@/layouts/PublicLayout'
+
+export default function About() {
+  return (
+    <PublicLayout>
+      <div className="space-y-16 max-w-6xl mx-auto px-4 py-12 text-slate-100">
+        {/* Hero */}
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold text-blue-400">
+            <Shield className="w-3.5 h-3.5" /> Modern Enterprise ICT Infrastructure
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight">
+            About ISATS Platform
+          </h1>
+          <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+            The Information and Communication Technology Support and Tracking System (ISATS) is an enterprise SaaS platform engineered to deliver total visibility, automated SLA support, hardware lifecycle governance, and AI predictive maintenance for modern organizations.
+          </p>
+        </div>
+
+        {/* Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+              <QrCode className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white">Full Lifecycle Asset Tracking</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Every device is tracked from procurement to decommission with dynamic QR codes, Code-128 barcodes, movement logs, and digital policy agreements.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <Server className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white">Multi-Tenant Architecture</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Strict cryptographic tenant isolation ensures organizational privacy, with 250 users included in the baseline TZS 100,000/month plan.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400">
+              <Users className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white">9-Tier Role Governance</h3>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Specialized operational dashboards for Staff, Technicians, Officers, Supervisors, HODs, Managers, Admins, SuperAdmins, and PantherMode.
+            </p>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-blue-950/80 via-slate-900 to-indigo-950/80 border border-blue-800/40 text-center space-y-4">
+          <h2 className="text-2xl sm:text-3xl font-black text-white">Ready to streamline your ICT operations?</h2>
+          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+            Get started in under 3 minutes with our self-service onboarding wizard.
+          </p>
+          <div className="pt-2">
+            <Link to="/onboarding">
+              <Button className="bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs gap-2">
+                Start Enterprise Onboarding <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </PublicLayout>
+  )
+}
